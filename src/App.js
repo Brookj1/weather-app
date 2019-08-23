@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col } from 'reactstrap';
+import SearchBar from './components/SearchBar';
+import DayCard from './components/DayCard';
+import DayDetail from './components/DayDetail';
+import data from './data/sample.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Container>
+      <Row>
+        <Col md={7}>
+          <h1>Weather for LOCATION HERE</h1>
+        </Col>
+        <Col md={5}>
+          <SearchBar />
+        </Col>
+      </Row>
+      <Row></Row>
+      <Row>
+        <DayDetail />
+      </Row>
+    </Container>
+  )
+};
 
 export default App;
