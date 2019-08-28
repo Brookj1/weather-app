@@ -1,8 +1,22 @@
 import React from "react";
+import { Col, Card, CardHeader, CardBody } from "reactstrap";
+import { tsPropertySignature } from "@babel/types";
 
-const DayCard = () => {
+const DayCard =props => {
+   console.log(props);
    return (
-    <p>Day Card</p>
+    <Col>
+      <Card>
+         <CardHeader>{props.day}</CardHeader>
+         <CardBody>
+            <h3>{props.current.toFixed(1)}°</h3>
+            <p>
+               <img src={`${process.env.PUBLIC_URL}/icons/${props.icon}.png`} alt={props.description} />
+            </p>
+
+         </CardBody>
+      </Card>
+    </Col>
    )
 }
 
